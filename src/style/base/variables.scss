@@ -1,0 +1,50 @@
+:root {
+	--main-font-family: 'Space Mono', sans-serif;
+	--bodoni-font-family: 'Bodoni Moda', sans-serif;
+	--raleway-font-family: 'Raleway', sans-serif;
+	--anonymous-font-family: 'Anonymous Pro', sans-serif;
+	--arsenal-font-family: 'Arsenal', sans-serif;
+	--abhaya-libre-font-family: 'Abhaya Libre', sans-serif;
+	--space-grotesk-font-family: 'Space Grotesk', sans-serif;
+	--font-size: 14px;
+	--font-weight: 400;
+	--link-transition: all 0.3s;
+
+	//colors background
+	--body-background: linear-gradient(0deg, #E4DDCE 0%, #E4DDCE 100%),
+		#8E8C63;
+	--sand: #F2DAC4;
+	--olive-beige: #8E8C63;
+	--sandy-gray: #B8ADA0;
+	--milky-white: rgba(255, 252, 242, 0.60);
+	--ivory: rgb(243, 235, 217);
+	--ivory-opacity: rgba(243, 235, 217, 0.25);
+	--light-olive: #C3BCAD;
+	// gradient 
+	--sand-dune-gradient: linear-gradient(180deg, #E4DDCE 28.85%, #8E8C63 64.75%);
+	--terracotta-sunset: linear-gradient(180deg, #C6A280 0%, #B48F6E 100%),
+		linear-gradient(0deg, #403529 0%, #403529 100%),
+		#C6A280;
+	--beige-olive-contrast: linear-gradient(180deg, #E4DDCE 28.85%, #8E8C63 64.75%);
+
+	//Colors text
+	--burgundy-red: #A92525;
+	--white: #fff;
+	--coffee-black: #403529;
+	--pearl-white: #FFFCF2;
+	--pastel-sand: #F6DEB1;
+	--golden-yellow: #FFD565;
+	--dusty-yellow: #F5DDB0;
+	--graphite: #1E1E1E;
+	--light-haze: rgba(255, 255, 255, 0.10);
+
+	//Font Weight
+	--100: 100;
+	--200: 200;
+	--300: 300;
+	--400: 400;
+	--500: 500;
+	--600: 600;
+	--700: 700;
+	--800: 800;
+}

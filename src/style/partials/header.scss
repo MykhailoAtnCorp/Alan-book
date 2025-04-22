@@ -1,0 +1,284 @@
+@use '../base/media-breakpoints.scss' as *;
+
+.header {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+
+	&-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&-shipping {
+		background-color: var(--sand);
+		padding: 12px 0;
+		z-index: 300;
+
+		&__wrapper {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			justify-content: center;
+		}
+
+		&-title {
+			color: var(--burgundy-red);
+			font-size: 13px;
+			font-weight: var(--400);
+			letter-spacing: 1px;
+			text-align: center;
+		}
+	}
+
+	&__menu {
+		background-color: var(--olive-beige);
+		width: 100%;
+		padding: 10px 0;
+
+		&-body {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 30px;
+		}
+
+		&-logo {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			transition: var(--link-transition);
+			z-index: 500;
+
+			&:hover {
+				transform: scale(1.1);
+				transition: var(--link-transition);
+			}
+
+			@include media-breakpoint-down(md) {
+				gap: 5px;
+			}
+		}
+
+		&-title {
+			color: var(--white);
+			font-weight: var(--800);
+			text-transform: uppercase;
+			font-family: var(--bodoni-font-family);
+			max-width: 75px;
+			width: 100%;
+		}
+
+		&-wrapper {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			gap: 20px;
+			align-items: center;
+
+			@include media-breakpoint-down(sm) {
+				flex-direction: column;
+				transition: all 0.3s ease 0s;
+				position: fixed;
+				height: 83%;
+				max-width: 100%;
+				top: 0;
+				left: -100%;
+				z-index: 50;
+				padding: 50px 20px 40px 20px;
+				background: var(--olive-beige);
+				overflow-y: scroll;
+				border-radius: 0 0 15px 15px;
+				backdrop-filter: blur(2px);
+			}
+		}
+
+		&-list {
+			display: flex;
+			align-items: center;
+			max-width: 660px;
+			width: 100%;
+			justify-content: space-between;
+			flex: 1 1 auto;
+			margin: 0 auto;
+
+			@include media-breakpoint-down(sm) {
+				flex-direction: column;
+				max-height: 60%;
+				padding: 140px 0 0 0;
+			}
+		}
+
+		&-item {
+			transition: var(--link-transition);
+			cursor: pointer;
+
+			&:hover {
+				transform: scale(1.1);
+				transition: var(--link-transition);
+			}
+
+			&-wrapper {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+
+				@include media-breakpoint-down(sm) {
+					img {
+						width: 15px;
+					}
+				}
+			}
+
+			&-link {
+				font-family: var(--raleway-font-family);
+				font-size: 12px;
+				font-weight: var(--600);
+				text-transform: uppercase;
+				letter-spacing: 0.773px;
+
+				@include media-breakpoint-down(sm) {
+					font-size: 24px;
+				}
+			}
+		}
+
+		&-actions {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+
+			@include media-breakpoint-down(md) {
+				gap: 10px;
+			}
+
+			@include media-breakpoint-down(sm) {
+				gap: 30px;
+			}
+
+			&-btn {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+
+				@include media-breakpoint-down(sm) {
+					gap: 30px;
+				}
+			}
+
+			&-button {
+				font-weight: var(--700);
+				color: var(--white);
+				text-transform: uppercase;
+				font-size: 10px;
+				font-family: var(--raleway-font-family);
+				padding: 8px 16px;
+				border-radius: 53px;
+				width: 76px;
+
+				@include media-breakpoint-down(sm) {
+					width: 100px;
+				}
+
+				&:active {
+					transform: scale(0.90);
+				}
+			}
+
+			&-cart {
+				&:active {
+					transform: scale(0.90);
+				}
+			}
+		}
+	}
+
+	&__burger {
+		position: relative;
+		display: none;
+		z-index: 50;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+
+		@include media-breakpoint-down(sm) {
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		span {
+			height: 3px;
+			width: 50%;
+			transform: scale(1);
+			background-color: var(--natural-coal);
+			border-radius: 10px;
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			height: 3px;
+			width: 80%;
+			background-color: var(--natural-coal);
+			transition: all 0.3s ease 0s;
+			border-radius: 10px;
+		}
+
+		&::before {
+			top: 7px;
+		}
+
+		&::after {
+			bottom: 7px;
+		}
+
+		&.active {
+			span {
+				transform: scale(0);
+			}
+
+			&::before {
+				top: 50%;
+				transform: rotate(-45deg) translate(0, -50%);
+			}
+
+			&::after {
+				bottom: 48%;
+				transform: rotate(45deg) translate(0, 50%);
+			}
+		}
+	}
+}
+
+.button-sign-up {
+	background-color: inherit;
+	border: 2px solid var(--light-haze);
+
+	&:hover {
+		background-color: var(--light-haze);
+	}
+}
+
+.button-sign-in {
+	background-color: var(--burgundy-red);
+	border: 2px solid var(--burgundy-red);
+
+	&:hover {
+		border: 2px solid var(--coffee-black);
+	}
+}
+
+.open {
+	display: flex;
+	left: 0;
+	transition: all 0.3s ease 0s;
+}
+
+.lock {
+	overflow: hidden;
+}

@@ -1,0 +1,133 @@
+@use '../base/media-breakpoints.scss' as *;
+
+.knowledge {
+	padding: 10px 0 50px 0;
+
+	&__wrapper {
+		width: 100%;
+		background-color: var(--olive-beige);
+		border-radius: 20px;
+		padding: 65px 70px;
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 20px;
+
+		@include media-breakpoint-down(lg) {
+			padding: 65px 10px;
+			gap: 15px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			flex-direction: column;
+			padding: 40px 10px;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		align-items: flex-end;
+
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+			align-items: center;
+			gap: 20px;
+		}
+	}
+
+	&__title {
+		color: var(--white);
+		font-size: 40px;
+		font-weight: var(--700);
+		font-family: var(--abhaya-libre-font-family);
+		text-transform: uppercase;
+		z-index: 2;
+
+		@include media-breakpoint-down(md) {
+			font-size: 30px;
+		}
+
+		@include media-breakpoint-down(xs) {
+			font-size: 26px;
+			text-align: center;
+		}
+	}
+
+	&__descr {
+		color: var(--white);
+		font-size: 24px;
+		font-family: var(--space-grotesk-font-family);
+		font-weight: var(--400);
+		max-width: 270px;
+		width: 100%;
+		text-align: right;
+		line-height: 1.2;
+		z-index: 2;
+
+		@include media-breakpoint-down(md) {
+			font-size: 20px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			text-align: center;
+			max-width: 100%;
+		}
+
+		@include media-breakpoint-down(xs) {
+			font-size: 16px;
+		}
+	}
+
+	&__link {
+		padding: 24px 48px;
+		border: 4px solid var(--white);
+		border-radius: 99px;
+		background-color: inherit;
+		z-index: 5;
+
+		@include media-breakpoint-down(md) {
+			padding: 24px 30px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			margin: 30px 0 0 0;
+		}
+
+		@include media-breakpoint-down(xs) {
+			width: 80%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 20px 10px;
+		}
+
+		&:hover {
+			background-color: var(--white);
+
+			span {
+				color: var(--olive-beige);
+			}
+		}
+
+		span {
+			font-size: 20px;
+			font-weight: var(--800);
+			font-family: var(--raleway-font-family);
+
+			@include media-breakpoint-down(xs) {
+				font-size: 16px;
+			}
+		}
+
+	}
+
+	&__image {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 1;
+	}
+}

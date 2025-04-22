@@ -1,0 +1,192 @@
+@use '../base/media-breakpoints.scss' as *;
+
+.reviews {
+	padding: 25px 0 150px 0;
+
+	&:hover {
+		.reviews__image {
+			transform: rotate(-12deg)
+		}
+
+		@include media-breakpoint-down(sm) {
+			.reviews__image {
+				transform: rotate(-3deg);
+			}
+		}
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding-bottom: 70px;
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		gap: 25px;
+
+		@include media-breakpoint-down(sm) {
+			flex-direction: column-reverse;
+		}
+	}
+
+	&__image {
+		max-width: 600px;
+		width: 100%;
+		overflow: hidden;
+		border-radius: 20px;
+		transform: rotate(-10deg);
+		z-index: 5;
+		transition: all .3s ease 0s;
+		box-shadow:
+			-10px -5px 10px rgba(0, 0, 0, 0.3),
+			0px 5px 10px rgba(0, 0, 0, 0.3);
+
+
+		@include media-breakpoint-down(lm) {
+			max-width: 450px;
+			margin: 0 25px;
+		}
+
+		@include media-breakpoint-down(md) {
+			max-width: 380px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			max-width: 70%;
+			margin: 0 auto;
+			transform: rotate(-3deg);
+		}
+
+		img {
+			transition: all .3s ease 0s;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transform: scale(1.2);
+
+			@include media-breakpoint-down(md) {
+				transform: scale(1);
+			}
+		}
+	}
+
+	&__info {
+		max-width: 560px;
+		width: 100%;
+		padding: 140px 0 0 0;
+
+		@include media-breakpoint-down(sm) {
+			max-width: 100%;
+			padding: 30px 20px 0 20px;
+		}
+
+		&-actions {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+			gap: 20px;
+			position: relative;
+
+			@include media-breakpoint-down(md) {
+				max-width: 350px;
+				margin: 0 auto;
+			}
+
+			@include media-breakpoint-down(sm) {
+				max-width: 100%;
+			}
+		}
+
+		&-navigation {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			margin: 45px 0 0 0;
+			position: relative;
+
+			&-btn {
+				width: 48px;
+				height: 48px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border: 2px solid var(--light-olive);
+				cursor: pointer;
+				transition: all .3s ease 0s;
+				background-color: inherit;
+
+				&:hover {
+					background-color: var(--light-olive);
+				}
+
+				img {
+					margin-right: 4px;
+				}
+			}
+
+			&-next {
+				transform: rotate(180deg);
+			}
+		}
+
+		&-pagination {
+			position: absolute;
+			top: 50% !important;
+			left: calc(100% - 70px) !important;
+			width: 100px !important;
+			transform: translateY(50%) !important;
+			height: 20px !important;
+			font-family: var(--space-grotesk-font-family);
+			color: var(--coffee-black) !important;
+			font-weight: var(--500) !important;
+			font-size: 20px;
+		}
+	}
+
+	&__slider {
+		max-width: 560px;
+		width: 100%;
+		overflow: hidden;
+
+		@include media-breakpoint-down(md) {
+			max-width: 350px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			max-width: 100%;
+		}
+
+		&-wrapper {
+			width: 100%;
+		}
+
+		&-slide {
+			width: 100%;
+			cursor: grab;
+
+			&-title {
+				font-size: 32px;
+				font-weight: var(--700);
+				letter-spacing: 1.31px;
+				text-transform: uppercase;
+				color: var(--coffee-black);
+				font-family: var(--abhaya-libre-font-family);
+			}
+
+			&-descr {
+				padding: 25px 0 0 0;
+				color: var(--coffee-black);
+				line-height: 1.4;
+				font-family: var(--space-grotesk-font-family);
+				font-size: 16px;
+				width: 100%;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				-webkit-line-clamp: 4;
+			}
+		}
+	}
+}

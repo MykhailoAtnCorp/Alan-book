@@ -1,0 +1,282 @@
+@use '../base/media-breakpoints.scss' as *;
+
+.integration {
+	background: var(--terracotta-sunset);
+	position: relative;
+	overflow: hidden;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 80px;
+
+		@include media-breakpoint-down(sm) {
+			gap: 50px;
+		}
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: 20px;
+		justify-content: center;
+	}
+
+	&__title {
+		font-family: var(--abhaya-libre-font-family);
+		color: var(--ivory);
+		font-size: 64px;
+		font-weight: var(--700);
+		text-align: center;
+		text-transform: uppercase;
+
+		@include media-breakpoint-down(lg) {
+			font-size: 50px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			font-size: 36px;
+		}
+	}
+
+	&__subtitle {
+		font-family: var(--space-grotesk-font-family);
+		text-align: center;
+		text-transform: uppercase;
+		color: var(--ivory);
+		font-size: 24px;
+		font-weight: var(--400);
+
+		@include media-breakpoint-down(lg) {
+			font-size: 20px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			font-size: 16px;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		max-width: 565px;
+		width: 100%;
+
+		@include media-breakpoint-down(lm) {
+			max-width: 525px;
+		}
+
+		&-block {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			width: 100%;
+
+			@include media-breakpoint-down(sm) {
+				justify-content: center;
+			}
+
+			&:first-child {
+				justify-content: start;
+
+				@include media-breakpoint-down(sm) {
+					justify-content: center;
+				}
+
+			}
+
+			&:nth-child(2) {
+				justify-content: center;
+
+				.integration__actions-descr {
+					text-align: left;
+				}
+			}
+		}
+
+		&-descr {
+			color: var(--coffee-black);
+			font-size: 16px;
+			font-family: var(--space-grotesk-font-family);
+			font-weight: var(--500);
+			text-transform: uppercase;
+			max-width: 250px;
+			width: 100%;
+			text-align: right;
+			line-height: 1.2;
+			letter-spacing: 1.31px;
+
+			@include media-breakpoint-down(lg) {
+				font-size: 14px;
+			}
+		}
+
+		&-icon {
+			width: 98px;
+			height: 98px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			border: 2px solid rgba(64, 53, 41, 0.17);
+
+			@include media-breakpoint-down(lg) {
+				width: 70px;
+				height: 70px;
+
+				img {
+					width: 40px;
+					height: 40px;
+				}
+			}
+		}
+	}
+
+	&__link {
+		border: 4px solid var(--ivory);
+		padding: 20px 40px;
+		border-radius: 99px;
+		background-color: inherit;
+		z-index: 5;
+
+		@include media-breakpoint-down(sm) {
+			padding: 20px 25px;
+		}
+
+		&:hover {
+			background-color: var(--ivory);
+
+			span {
+				color: var(--coffee-black);
+			}
+		}
+
+		span {
+			color: var(--ivory);
+			text-transform: uppercase;
+			font-family: var(--raleway-font-family);
+			font-size: 20px;
+			font-weight: var(--800);
+			letter-spacing: 10%;
+
+			@include media-breakpoint-down(sm) {
+				font-size: 16px;
+			}
+		}
+	}
+
+	&__background {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		z-index: 1;
+		opacity: 0.5;
+		object-position: top;
+
+		@include media-breakpoint-down(xs){
+			object-position: center;
+		}
+	}
+
+	&__men-first {
+		max-width: 516px;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 2;
+
+		@include media-breakpoint-down(l) {
+			left: -7%;
+		}
+
+		@include media-breakpoint-down(lm) {
+			max-width: 440px;
+			left: -10%;
+		}
+
+		@include media-breakpoint-down(lg) {
+			max-width: 330px;
+		}
+
+		@include media-breakpoint-down(md) {
+			max-width: 290px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			max-width: 200px;
+			left: -4%;
+		}
+
+		@include media-breakpoint-down(xs) {
+			max-width: 120px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__men-second {
+		max-width: 492px;
+		width: 100%;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: 2;
+
+		@include media-breakpoint-down(lm) {
+			max-width: 400px;
+			right: -2%;
+		}
+
+		@include media-breakpoint-down(lg) {
+			max-width: 310px;
+		}
+
+		@include media-breakpoint-down(md) {
+			max-width: 240px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			max-width: 180px;
+		}
+
+		@include media-breakpoint-down(xs) {
+			max-width: 120px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__background-wrapper {
+		padding: 115px 0;
+		max-width: 2000px;
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		margin: 0 auto;
+		height: 100%;
+
+		@include media-breakpoint-down(sm) {
+			padding: 60px 0;
+		}
+
+		@include media-breakpoint-down(xs) {
+			padding: 60px 0 130px 0;
+		}
+	}
+}
