@@ -24,7 +24,7 @@ export default defineConfig({
 		port: 3025,
 		host: '0.0.0.0',
 		hmr: true,
-		allowedHosts: ['9128-188-130-177-205.ngrok-free.app']
+		allowedHosts: ['16f1-188-130-177-205.ngrok-free.app']
 	},
 
 	plugins: [
