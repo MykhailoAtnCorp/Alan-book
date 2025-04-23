@@ -8,7 +8,8 @@ import injectHTML from 'vite-plugin-html-inject'
 export default defineConfig({
 	build: {
 		target: 'es2022',
-		outDir: 'dist'
+		outDir: 'dist',
+		assetsDir: 'assets'
 	},
 	resolve: {
 		alias: {
@@ -18,7 +19,7 @@ export default defineConfig({
 		}
 	},
 
-	base: '/sponsor-stories/',
+	base: './',
 	server: {
 		port: 3025,
 		host: '0.0.0.0',
