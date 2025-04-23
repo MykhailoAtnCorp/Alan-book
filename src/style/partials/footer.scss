@@ -1,2 +1,249 @@
 @use '../base/media-breakpoints.scss' as *;
 
+
+.footer {
+	width: 100%;
+	padding: 20px 20px 40px 20px;
+	position: relative;
+	overflow: hidden;
+
+	&__wrapper {
+		border-radius: 20px;
+		background-color: rgba(255, 252, 242, 0.6);
+		max-width: 1360px;
+		width: 100%;
+		margin: 0 auto;
+		padding: 60px 60px 130px 60px;
+		position: relative;
+		overflow: visible;
+
+		@include media-breakpoint-down(md) {
+			padding: 30px 30px 80px 30px;
+		}
+
+
+		&-container {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			gap: 30px;
+
+			@include media-breakpoint-down(sm) {
+				flex-direction: column;
+				gap: 50px;
+			}
+		}
+
+		&-info {
+			max-width: 230px;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		&-link {
+			font-family: var(--abhaya-libre-font-family);
+			font-size: 28px;
+			font-weight: var(--500);
+			letter-spacing: 2%;
+			text-transform: uppercase;
+			color: var(--coffee-black);
+
+			&:hover {
+				color: var(--olive-beige);
+			}
+		}
+
+		&-social {
+			display: flex;
+			align-items: center;
+			gap: 15px;
+
+			&-link {
+				&:hover {
+					transform: scale(1.2);
+				}
+			}
+		}
+
+		&-actions {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(230px, 200px));
+			gap: 40px;
+
+			@include media-breakpoint-down(md) {
+				gap: 15px;
+				grid-template-columns: repeat(2, minmax(180px, 150px));
+			}
+
+			@include media-breakpoint-down(sm) {
+				gap: 30px;
+			}
+
+			@include media-breakpoint-down(xs) {
+				grid-template-columns: repeat(1, 1fr);
+				gap: 50px;
+			}
+
+			&-list {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+			}
+
+			&-item {
+				color: var(--coffee-black);
+				font-family: var(--space-grotesk-font-family);
+				font-size: 16px;
+				font-weight: var(--400);
+			}
+
+			&-link {
+				position: relative;
+				display: inline-block;
+				text-decoration: none;
+
+				&::after {
+					content: '';
+					position: absolute;
+					left: 0;
+					bottom: -2px;
+					height: 2px;
+					width: 0;
+					background-color: var(--coffee-black);
+					transition: all 0.3s ease 0s;
+				}
+
+				&:hover::after {
+					width: 100%;
+				}
+			}
+
+			&-block {
+				display: flex;
+				flex-direction: column;
+				gap: 30px;
+
+				&-link {
+					display: flex;
+					align-items: center;
+					gap: 8px;
+					color: var(--coffee-black);
+					font-family: var(--space-grotesk-font-family);
+					font-size: 16px;
+					font-weight: var(--400);
+					position: relative;
+					text-decoration: none;
+
+					img {
+						transition: transform 0.3s ease;
+						display: inline-block;
+					}
+
+					&:hover {
+						img {
+							animation: ring 2s ease;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__bg {
+		position: absolute;
+		bottom: -40px;
+		left: 0%;
+		z-index: -1;
+		transform: translateY(100px);
+		opacity: 0;
+		transition: transform 1s ease, opacity 1s ease;
+		max-width: 760px;
+		width: 100%;
+
+		@include media-breakpoint-down(lm) {
+			max-width: 600px;
+		}
+
+		@include media-breakpoint-down(lg) {
+			max-width: 500px;
+			left: -5%;
+		}
+
+		@include media-breakpoint-down(md) {
+			max-width: 430px;
+			left: -7%;
+		}
+
+		@include media-breakpoint-down(sm) {
+			left: 30%;
+		}
+
+		@include media-breakpoint-down(xs) {
+			max-width: 300px;
+			left: 20%;
+		}
+
+		@include media-breakpoint-down(xxs) {
+			max-width: 250px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&.animate-book {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+}
+
+@keyframes ring {
+	0% {
+		transform: rotate(0deg) scale(1);
+	}
+
+	10% {
+		transform: rotate(5deg) scale(1.15);
+	}
+
+	20% {
+		transform: rotate(-5deg) scale(1.17);
+	}
+
+	30% {
+		transform: rotate(4deg) scale(1.19);
+	}
+
+	40% {
+		transform: rotate(-4deg) scale(1.1);
+	}
+
+	50% {
+		transform: rotate(3deg) scale(1.05);
+	}
+
+	60% {
+		transform: rotate(-3deg) scale(1.05);
+	}
+
+	70% {
+		transform: rotate(2deg) scale(1.03);
+	}
+
+	80% {
+		transform: rotate(-2deg) scale(1.03);
+	}
+
+	90% {
+		transform: rotate(1deg) scale(1);
+	}
+
+	100% {
+		transform: rotate(0deg) scale(1);
+	}
+}
