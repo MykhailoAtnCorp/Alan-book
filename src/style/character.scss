@@ -1,0 +1,12 @@
+@use 'base/global';
+@use 'base/media-breakpoints';
+@use 'base/normalize';
+@use 'partials/header.scss';
+
+h1 {
+	color: red;
+}
+
+.test-config {
+	color: red
+}
